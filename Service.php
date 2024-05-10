@@ -56,17 +56,14 @@ class Service {
     private function identifyWordpressVersion() {
         $html = file_get_contents($this->url);
 
-        // Check if HTML content was retrieved successfully
         if ($html !== false) {
-            // Search for the WordPress version pattern in the HTML content
             if (preg_match('/<meta name="generator" content="WordPress (\d+\.\d+\.\d+)/', $html, $matches)) {
-                // Extract the version number from the match
                 $this->version = $matches[1];
             } else {
-                return null; // WordPress version not found
+                return null;
             }
         } else {
-            return null; // Failed to retrieve HTML content from URL
+            return null;
         }
     }
 
@@ -74,68 +71,23 @@ private function identifyMysqlVersion() {
 
     $html = file_get_contents($this->url);
 
-    // Check if HTML content was retrieved successfully
-    if ($html !== false) {
-        // Search for the MySQL version pattern in the HTML content
-        if (preg_match('/MySQL (\d+\.\d+(\.\d+)?)/', $html, $matches)) {
-                // Extract the version number from the match
+     if ($html !== false) {
+         if (preg_match('/MySQL (\d+\.\d+(\.\d+)?)/', $html, $matches)) {
             $this->version = $matches[1];
         } else {
-            return null; // MySQL version not found
+            return null;
         }
     } else {
-        return null; // Failed to retrieve HTML content from URL
+        return null;
     }
 }
-
-//    public function checkVulnerabilities() {
-////        $token = 'DZ4S5QHK6XWWP5XOHU8HGBYAX2HQEPZT49EFMHOASDHU89VRJ7N2M40INXG4D64S';
-////        $url = 'https://vulners.com/api/v3/search/lucene/';
-////        $data = array(
-////            "query" => $this->type . ' ' . $this->version,
-////            "apiKey" => $token  // Replace <Your-API-Key-Here> with actual API key
-////        );
-////
-////        $options = array(
-////            'http' => array(
-////                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-////                'method'  => 'POST',
-////                'content' => json_encode($data),
-////            ),
-////        );
-////
-////        $context  = stream_context_create($options);
-////        $result = file_get_contents($url, false, $context);
-////
-////        $responseArray = json_decode($result, true);
-//////        if (isset($responseArray['data']['search'])) {
-//////            $vulnerabilities = $responseArray['data']['search'];
-////            file_put_contents('vulnerabilities' . $this->type . '.txt', json_encode($responseArray));
-//////        }
-//
-//
-//        $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?cpeMatchString=cpe:2.3:a:{$this->type}:{$this->version}:*:*:*:*:*:*:*";        $response = file_get_contents($url);
-//        $responseArray = json_decode($response, true);
-//
-//        file_put_contents('vulnerabilities' . $this->type . '.txt', json_encode($responseArray));
-//
-//    }
-
-//    public function checkVulnerabilities() {
-//        $cpeName = "cpe:2.3:a:" . urlencode($this->type) . ":" . urlencode($this->type) . ":*:*:*:*:*:*:*";
-//        $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?cpeName=" . urlencode($cpeName);
-//
-//        $response = file_get_contents($url);
-//        $responseArray = json_decode($response, true);
-//
-//        file_put_contents('vulnerabilities_' . $this->type . '.txt', json_encode($responseArray));
-//    }
 
     public function checkVulnerabilities() {
         $cpeName = "cpe:2.3:a:$this->type:$this->type:$this->version:*:*:*:*:*:*:*";
         $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?cpeName=" . urlencode($cpeName);
 
         $response = file_get_contents($url);
+
         $formatted = $this->extractVulnerabilities($response);
 
         $jsonOutput = json_encode($formatted, JSON_PRETTY_PRINT);
@@ -159,7 +111,6 @@ private function identifyMysqlVersion() {
                 'Description' => $vulnerability['cve']['descriptions'][0]['value'],
                 'Base Severity' => $vulnerability['cve']['metrics']['cvssMetricV2'][0]['baseSeverity']
             ];
-
             $formattedVulnerabilities[] = $formattedVulnerability;
         }
 
@@ -178,7 +129,6 @@ try {
         try {
             $serviceObject->identifyVersion();
             $serviceObject->checkVulnerabilities();
-//            print_r($serviceObject);
             $service['version'] = $serviceObject->version;
             $service['vulnerabilities'] = $serviceObject->vulnerabilities;
         } catch (Exception $e) {
@@ -193,7 +143,7 @@ try {
 }
 
 function generateReport($services) {
-    $report = "Vulnerability Report\n";
+    $report = "Report\n";
     foreach ($services as $service) {
         $report .= "Service: {$service['type']}\n";
         $report .= "URL: {$service['url']}\n";
