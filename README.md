@@ -34,6 +34,7 @@ phpunit --bootstrap vendor/autoload.php tests
 
 Setting up the services
 The vulnerability scanner can check for vulnerabilities in Apache, WordPress, and MySQL services. Here's how you can set up these services for testing:  
+
 Apache
 Install Apache using your package manager. For example, on Ubuntu, you can use sudo apt install apache2.
 Check the Apache version by running apache2 -v.
