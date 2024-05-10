@@ -1,18 +1,16 @@
 # Vulnerabilities Scanner
 
-This project is a vulnerability scanner for services. It uses the NVD's CVE API to fetch vulnerability data for specific services and versions.
-
+This project is a PHP-based vulnerability scanner that leverages the National Vulnerability Database's (NVD) Common Vulnerabilities and Exposures (CVE) API. The scanner fetches vulnerability data for specific services and versions, providing a comprehensive overview of potential security risks associated with the services in use.
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
+The following instructions will guide you through obtaining a copy of this project and running it on your local machine for development and testing purposes.
 ### Prerequisites
-
-- PHP
-- Composer
+Before you begin, ensure that you have the following software installed on your machine:  
+- **PHP**: The project is written in PHP. You can download PHP from the [official PHP website](https://www.php.net/downloads.php).
+- **Composer**: This project uses Composer for dependency management. You can download Composer from the [official Composer website](https://getcomposer.org/download/).
 
 ### Installing
-
+To set up the project on your local machine, follow these steps:
 1. Clone the repository: `git clone https://github.com/anitatehrani/Vulnerabilities_Scanner.git`
 2. Navigate to the project directory: `cd Vulnerabilities_Scanner`
 3. Install dependencies: `composer install`
@@ -35,27 +33,19 @@ To run the tests, use the following command in the project root directory:
 Setting up the services
 The vulnerability scanner can check for vulnerabilities in Apache, WordPress, and MySQL services. Here's how you can set up these services for testing:  
 
-- Apache:
-Install Apache using your package manager. 
-For example, on Ubuntu, you can use `sudo apt install apache2`.
-Check the Apache version by running `apache2 -v`.
+#### Apache
+1. Install Apache using your package manager. For example, on Ubuntu, you can use `sudo apt install apache2`.
+2. Check the Apache version by running `apache2 -v`.
 
-- WordPress:
-Download the latest version of WordPress from the official website.
-Extract the downloaded file to the Apache document root (usually /var/www/html).
-Follow the instructions in the wp-admin/install.php script to set up WordPress.
+#### WordPress:
+1. Download the latest version of WordPress from the [official website](https://wordpress.org/download/).
+2. Extract the downloaded file to the Apache document root (usually /var/www/html).
+3. Follow the instructions in the wp-admin/install.php script to set up WordPress.
 
-- MySQL:
-Install MySQL using your package manager. 
+#### MySQL
+1. Install MySQL using your package manager. 
 For example, on Ubuntu, you can use `sudo apt install mysql-server`.
-Check the MySQL version by running `mysql -V`.
-
-
-## Live Demonstration
-For the live demonstration, you will need to have Apache, WordPress, and MySQL installed and running on your machine. Follow the instructions in the "Setting up the services" section to set up these services.  Once the services are set up, you can use the vulnerability scanner to check for vulnerabilities. Here's how:  
-1. Open a terminal and navigate to the project directory.
-2. Run the script with the command **php Service.php**.
-3. The script will fetch the vulnerability data from the NVD's CVE API and save it to a file named **vulnerabilities_<service_type>.txt**.
+2. Check the MySQL version by running `mysql -V`.
 
 ## Understanding the Code
 The main functionality of the vulnerability scanner is contained in the **Service.php** file. This file defines a **Service** class that represents a service to be scanned for vulnerabilities. 
