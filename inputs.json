@@ -1,0 +1,14 @@
+{
+  "1": {
+    "type": "Apache",
+    "url": "http://localhost"
+  },
+  "2": {
+    "type": "Wordpress",
+    "url": "http://localhost/wordpress"
+  },
+  "3": {
+    "type": "MySQL",
+    "url": "http://localhost/phpmyadmin"
+  }
+}

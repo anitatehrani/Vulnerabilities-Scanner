@@ -1,29 +1,23 @@
 <?php
 
-// Dependency inclusion (replace with actual library usage)
-require_once 'vendor/autoload.php'; // Assuming use of Composer for libraries
+require_once 'vendor/autoload.php';
 
-// MockVulnerabilityScanner class (for testing)
 class MockVulnerabilityScanner implements VulnerabilityScanner {
     public function scan($serviceType, $serviceVersion) {
         $vulnerabilities = [];
-        // Define mock vulnerabilities based on service type and version (replace with your data)
         if ($serviceType === 'Apache' && $serviceVersion === '2.4.48') {
             $vulnerabilities[] = ['id' => 'CVE-2023-XXXX', 'description' => 'Sample Apache vulnerability', 'severity' => 'High'];
         } elseif ($serviceType === 'Wordpress' && $serviceVersion === '6.1.1') {
             $vulnerabilities[] = ['id' => 'CVE-2024-YYYY', 'description' => 'Sample Wordpress vulnerability', 'severity' => 'Medium'];
         }
-        // Add more mock vulnerabilities for other service types and versions
         return $vulnerabilities;
     }
 }
 
-// VulnerabilityScanner interface (optional, for future integration with real API)
 interface VulnerabilityScanner {
     public function scan($serviceType, $serviceVersion);
 }
 
-// Service class
 class Service {
     public $type;
     public $url;
@@ -45,55 +39,97 @@ class Service {
     }
 
     private function identifyApacheVersion() {
-        // Implement logic to retrieve version from HTTP headers using cURL or Guzzle
-        $headers = get_headers($this->url); // Placeholder for using libraries
-        // Parse headers to extract version information and update $this->version
+        $ch = curl_init($this->url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        if (preg_match('/Apache\/(\d+\.\d+(\.\d+)?)/', $response, $matches)) {
+            $this->version = $matches[1];
+        } else {
+            throw new Exception("Unable to identify Apache version");
+        }
     }
 
     private function identifyWordpressVersion() {
-        // Implement logic to retrieve version from Wordpress (e.g., using wp-admin)
-        $ch = curl_init($this->url . '/wp-admin/admin.php?page=wp-credits');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        // Parse response to extract version information and update $this->version
+        $html = file_get_contents($this->url);
+
+        // Check if HTML content was retrieved successfully
+        if ($html !== false) {
+            // Search for the WordPress version pattern in the HTML content
+            if (preg_match('/<meta name="generator" content="WordPress (\d+\.\d+\.\d+)/', $html, $matches)) {
+                // Extract the version number from the match
+                $this->version = $matches[1];
+            } else {
+                return null; // WordPress version not found
+            }
+        } else {
+            return null; // Failed to retrieve HTML content from URL
+        }
     }
 
-    private function identifyMysqlVersion() {
-        // Consider SSH access or container commands to retrieve MySQL version
-        // Replace with actual implementation based on your environment
-        throw new Exception("MySQL version identification not currently implemented");
-    }
+private function identifyMysqlVersion() {
 
-    public function checkVulnerabilities() {
-        // Use chosen VulnerabilityScanner implementation
-        $vulnerabilityScanner = new MockVulnerabilityScanner(); // For testing
-        // **Replace with real implementation when using a real vulnerability database API**
-        // $vulnerabilityScanner = new RealVulnerabilityScanner($apiKey); // Example with API key
-        $this->vulnerabilities = $vulnerabilityScanner->scan($this->type, $this->version);
+    $html = file_get_contents($this->url);
+
+    // Check if HTML content was retrieved successfully
+    if ($html !== false) {
+        // Search for the MySQL version pattern in the HTML content
+        if (preg_match('/MySQL (\d+\.\d+(\.\d+)?)/', $html, $matches)) {
+                // Extract the version number from the match
+            $this->version = $matches[1];
+        } else {
+            return null; // MySQL version not found
+        }
+    } else {
+        return null; // Failed to retrieve HTML content from URL
     }
 }
 
-// Main script
-try {
-    // Read service details from user input (array or file) - Replace with actual logic
-    $services = [
-        ['type' => 'Apache', 'url' => 'http://localhost'],
-        ['type' => 'Wordpress', 'url' => 'http://localhost/wordpress'],
-        // Add more service entries as needed
-    ];
+    public function checkVulnerabilities() {
+        $token = 'DZ4S5QHK6XWWP5XOHU8HGBYAX2HQEPZT49EFMHOASDHU89VRJ7N2M40INXG4D64S';
+        $url = 'https://vulners.com/api/v3/search/lucene/?query=' . urlencode($this->type . ' ' . $this->version);
 
-    foreach ($services as $service) {
+        $options = [
+            'http' => [
+                'header' => "Authorization: Token " . $token
+            ]
+        ];
+        $context = stream_context_create($options);
+
+        $response = file_get_contents($url, false, $context);
+
+        if ($response === false) {
+            throw new Exception("Unable to get vulnerabilities from Vulners API");
+        }
+
+        $responseArray = json_decode($response, true);
+        if (isset($responseArray['data']['search'])) {
+            $vulnerabilities = $responseArray['data']['search'];
+            file_put_contents('vulnerabilities' . $this->type . '.txt', json_encode($vulnerabilities));
+        }
+    }
+}
+
+try {
+
+    $json = file_get_contents('inputs.json');
+    $services = json_decode($json, true);
+
+    foreach ($services as &$service) {
         $serviceObject = new Service($service['type'], $service['url']);
         try {
             $serviceObject->identifyVersion();
             $serviceObject->checkVulnerabilities();
+//            print_r($serviceObject);
+            $service['version'] = $serviceObject->version;
+            $service['vulnerabilities'] = $serviceObject->vulnerabilities;
         } catch (Exception $e) {
             echo "Error processing service ({$service['type']}): " . $e->getMessage() . PHP_EOL;
         }
     }
-
-    // Generate report (text, HTML, etc.)
     $report = generateReport($services);
     echo $report;
 
@@ -101,22 +137,12 @@ try {
     echo "An unexpected error occurred: " . $e->getMessage() . PHP_EOL;
 }
 
-// Report generation function (basic text format)
-//function generateReport($services
 function generateReport($services) {
     $report = "Vulnerability Report\n";
     foreach ($services as $service) {
-        $report .= "Service: {$service->type}\n";
-        $report .= "URL: {$service->url}\n";
-        $report .= "Version: {$service->version}\n";
-        $report .= "Vulnerabilities:\n";
-        if (empty($service->vulnerabilities)) {
-            $report .= "None\n";
-        } else {
-            foreach ($service->vulnerabilities as $vulnerability) {
-                $report .= "- {$vulnerability['id']} ({$vulnerability['severity']}): {$vulnerability['description']}\n";
-            }
-        }
+        $report .= "Service: {$service['type']}\n";
+        $report .= "URL: {$service['url']}\n";
+        $report .= "Version: {$service['version']}\n";
         $report .= "\n";
     }
     return $report;
