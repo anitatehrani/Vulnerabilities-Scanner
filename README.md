@@ -35,17 +35,17 @@ To run the tests, use the following command in the project root directory:
 Setting up the services
 The vulnerability scanner can check for vulnerabilities in Apache, WordPress, and MySQL services. Here's how you can set up these services for testing:  
 
-Apache
+- Apache
 Install Apache using your package manager. 
 For example, on Ubuntu, you can use `sudo apt install apache2`.
 Check the Apache version by running `apache2 -v`.
 
-WordPress
+- WordPress
 Download the latest version of WordPress from the official website.
 Extract the downloaded file to the Apache document root (usually /var/www/html).
 Follow the instructions in the wp-admin/install.php script to set up WordPress.
 
-MySQL
+- MySQL
 Install MySQL using your package manager. 
 For example, on Ubuntu, you can use `sudo apt install mysql-server`.
 Check the MySQL version by running `mysql -V`.
