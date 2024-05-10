@@ -88,29 +88,84 @@ private function identifyMysqlVersion() {
     }
 }
 
+//    public function checkVulnerabilities() {
+////        $token = 'DZ4S5QHK6XWWP5XOHU8HGBYAX2HQEPZT49EFMHOASDHU89VRJ7N2M40INXG4D64S';
+////        $url = 'https://vulners.com/api/v3/search/lucene/';
+////        $data = array(
+////            "query" => $this->type . ' ' . $this->version,
+////            "apiKey" => $token  // Replace <Your-API-Key-Here> with actual API key
+////        );
+////
+////        $options = array(
+////            'http' => array(
+////                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+////                'method'  => 'POST',
+////                'content' => json_encode($data),
+////            ),
+////        );
+////
+////        $context  = stream_context_create($options);
+////        $result = file_get_contents($url, false, $context);
+////
+////        $responseArray = json_decode($result, true);
+//////        if (isset($responseArray['data']['search'])) {
+//////            $vulnerabilities = $responseArray['data']['search'];
+////            file_put_contents('vulnerabilities' . $this->type . '.txt', json_encode($responseArray));
+//////        }
+//
+//
+//        $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?cpeMatchString=cpe:2.3:a:{$this->type}:{$this->version}:*:*:*:*:*:*:*";        $response = file_get_contents($url);
+//        $responseArray = json_decode($response, true);
+//
+//        file_put_contents('vulnerabilities' . $this->type . '.txt', json_encode($responseArray));
+//
+//    }
+
+//    public function checkVulnerabilities() {
+//        $cpeName = "cpe:2.3:a:" . urlencode($this->type) . ":" . urlencode($this->type) . ":*:*:*:*:*:*:*";
+//        $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?cpeName=" . urlencode($cpeName);
+//
+//        $response = file_get_contents($url);
+//        $responseArray = json_decode($response, true);
+//
+//        file_put_contents('vulnerabilities_' . $this->type . '.txt', json_encode($responseArray));
+//    }
+
     public function checkVulnerabilities() {
-        $token = 'DZ4S5QHK6XWWP5XOHU8HGBYAX2HQEPZT49EFMHOASDHU89VRJ7N2M40INXG4D64S';
-        $url = 'https://vulners.com/api/v3/search/lucene/?query=' . urlencode($this->type . ' ' . $this->version);
+        $cpeName = "cpe:2.3:a:$this->type:$this->type:$this->version:*:*:*:*:*:*:*";
+        $url = "https://services.nvd.nist.gov/rest/json/cves/2.0?cpeName=" . urlencode($cpeName);
 
-        $options = [
-            'http' => [
-                'header' => "Authorization: Token " . $token
-            ]
-        ];
-        $context = stream_context_create($options);
+        $response = file_get_contents($url);
+        $formatted = $this->extractVulnerabilities($response);
 
-        $response = file_get_contents($url, false, $context);
+        $jsonOutput = json_encode($formatted, JSON_PRETTY_PRINT);
 
-        if ($response === false) {
-            throw new Exception("Unable to get vulnerabilities from Vulners API");
-        }
-
-        $responseArray = json_decode($response, true);
-        if (isset($responseArray['data']['search'])) {
-            $vulnerabilities = $responseArray['data']['search'];
-            file_put_contents('vulnerabilities' . $this->type . '.txt', json_encode($vulnerabilities));
-        }
+        file_put_contents('vulnerabilities_' . $this->type . '.txt', $jsonOutput);
     }
+
+
+    function extractVulnerabilities($jsonText) {
+        $data = json_decode($jsonText, true);
+
+        $vulnerabilities = $data['vulnerabilities'];
+
+        $formattedVulnerabilities = [];
+
+        foreach ($vulnerabilities as $vulnerability) {
+            $formattedVulnerability = [
+                'CVE-ID' => $vulnerability['cve']['id'],
+                'Published' => $vulnerability['cve']['published'],
+                'Last Modified' => $vulnerability['cve']['lastModified'],
+                'Description' => $vulnerability['cve']['descriptions'][0]['value'],
+                'Base Severity' => $vulnerability['cve']['metrics']['cvssMetricV2'][0]['baseSeverity']
+            ];
+
+            $formattedVulnerabilities[] = $formattedVulnerability;
+        }
+
+        return $formattedVulnerabilities;
+    }
+
 }
 
 try {

@@ -1,0 +1,632 @@
+[
+    {
+        "CVE-ID": "CVE-2007-2627",
+        "Published": "2007-05-11T17:19:00.000",
+        "Last Modified": "2018-10-16T16:44:45.180",
+        "Description": "Cross-site scripting (XSS) vulnerability in sidebar.php in WordPress, when custom 404 pages that call get_sidebar are used, allows remote attackers to inject arbitrary web script or HTML via the query string (PHP_SELF), a different vulnerability than CVE-2007-1622.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2007-5800",
+        "Published": "2007-11-03T00:46:00.000",
+        "Last Modified": "2017-09-29T01:29:42.707",
+        "Description": "Multiple PHP remote file inclusion vulnerabilities in the BackUpWordPress 0.4.2b and earlier plugin for WordPress allow remote attackers to execute arbitrary PHP code via a URL in the bkpwp_plugin_path parameter to (1) plugins\/BackUp\/Archive.php; and (2) Predicate.php, (3) Writer.php, (4) Reader.php, and other unspecified scripts under plugins\/BackUp\/Archive\/.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2008-1982",
+        "Published": "2008-04-27T20:05:00.000",
+        "Last Modified": "2017-09-29T01:30:58.410",
+        "Description": "SQL injection vulnerability in ss_load.php in the Spreadsheet (wpSS) 0.6 and earlier plugin for WordPress allows remote attackers to execute arbitrary SQL commands via the ss_id parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2008-4625",
+        "Published": "2008-10-21T01:18:02.100",
+        "Last Modified": "2017-09-29T01:32:15.900",
+        "Description": "SQL injection vulnerability in stnl_iframe.php in the ShiftThis Newsletter (st_newsletter) plugin for WordPress allows remote attackers to execute arbitrary SQL commands via the newsletter parameter, a different vector than CVE-2008-0683.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2008-4732",
+        "Published": "2008-10-24T10:30:00.923",
+        "Last Modified": "2018-10-11T20:52:41.513",
+        "Description": "SQL injection vulnerability in ajax_comments.php in the WP Comment Remix plugin before 1.4.4 for WordPress allows remote attackers to execute arbitrary SQL commands via the p parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2008-4733",
+        "Published": "2008-10-24T10:30:00.940",
+        "Last Modified": "2018-10-11T20:52:42.230",
+        "Description": "Cross-site scripting (XSS) vulnerability in wpcommentremix.php in WP Comment Remix plugin before 1.4.4 for WordPress allows remote attackers to inject arbitrary web script or HTML via the (1) replytotext, (2) quotetext, (3) originallypostedby, (4) sep, (5) maxtags, (6) tagsep, (7) tagheadersep, (8) taglabel, and (9) tagheaderlabel parameters.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2008-4734",
+        "Published": "2008-10-24T10:30:00.970",
+        "Last Modified": "2018-10-11T20:52:42.810",
+        "Description": "Cross-site request forgery (CSRF) vulnerability in the wpcr_do_options_page function in WP Comment Remix plugin before 1.4.4 for WordPress allows remote attackers to perform unauthorized actions as administrators via a request that sets the wpcr_hidden_form_input parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2008-5752",
+        "Published": "2008-12-30T17:30:00.203",
+        "Last Modified": "2017-09-29T01:32:47.073",
+        "Description": "Directory traversal vulnerability in getConfig.php in the Page Flip Image Gallery plugin 0.2.2 and earlier for WordPress, when magic_quotes_gpc is disabled, allows remote attackers to read arbitrary files via a .. (dot dot) in the book_id parameter.  NOTE: some of these details are obtained from third party information.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2009-0968",
+        "Published": "2009-03-19T10:30:00.547",
+        "Last Modified": "2017-09-29T01:34:07.233",
+        "Description": "SQL injection vulnerability in fmoblog.php in the fMoblog plugin 2.1 for WordPress allows remote attackers to execute arbitrary SQL commands via the id parameter to index.php.  NOTE: some of these details are obtained from third party information.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2008-6811",
+        "Published": "2009-05-18T12:00:01.733",
+        "Last Modified": "2017-09-29T01:33:21.433",
+        "Description": "Unrestricted file upload vulnerability in image_processing.php in the e-Commerce Plugin 3.4 and earlier for Wordpress allows remote attackers to execute arbitrary code by uploading a file with an executable extension, then accessing it via a direct request to the file in wp-content\/plugins\/wp-shopping-cart\/.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2009-2122",
+        "Published": "2009-06-19T18:00:00.187",
+        "Last Modified": "2017-09-29T01:34:43.653",
+        "Description": "SQL injection vulnerability in viewimg.php in the Paolo Palmonari Photoracer plugin 1.0 for WordPress allows remote attackers to execute arbitrary SQL commands via the id parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-2143",
+        "Published": "2009-06-22T14:30:00.250",
+        "Last Modified": "2017-09-29T01:34:44.497",
+        "Description": "PHP remote file inclusion vulnerability in firestats-wordpress.php in the FireStats plugin before 1.6.2-stable for WordPress allows remote attackers to execute arbitrary PHP code via a URL in the fs_javascript parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-2144",
+        "Published": "2009-06-22T14:30:00.267",
+        "Last Modified": "2009-08-21T04:00:00.000",
+        "Description": "SQL injection vulnerability in the FireStats plugin before 1.6.2-stable for WordPress allows remote attackers to execute arbitrary SQL commands via unspecified vectors.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-2383",
+        "Published": "2009-07-08T15:30:01.750",
+        "Last Modified": "2017-09-19T01:29:04.497",
+        "Description": "SQL injection vulnerability in BTE_RW_webajax.php in the Related Sites plugin 2.1 for WordPress allows remote attackers to execute arbitrary SQL commands via the guid parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-2396",
+        "Published": "2009-07-09T16:30:00.717",
+        "Last Modified": "2017-09-19T01:29:05.187",
+        "Description": "PHP remote file inclusion vulnerability in template\/album.php in DM Albums 1.9.2, as used standalone or as a WordPress plugin, allows remote attackers to execute arbitrary PHP code via a URL in the SECURITY_FILE parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-2852",
+        "Published": "2009-08-18T21:00:00.547",
+        "Last Modified": "2017-09-19T01:29:20.187",
+        "Description": "WP-Syntax plugin 0.9.1 and earlier for Wordpress, with register_globals enabled, allows remote attackers to execute arbitrary PHP code via the test_filter[wp_head] array parameter to test\/index.php, which is used in a call to the call_user_func_array function.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2008-7040",
+        "Published": "2009-08-24T10:30:01.953",
+        "Last Modified": "2017-08-17T01:29:45.990",
+        "Description": "SQL injection vulnerability in ahah\/sf-profile.php in the Yellow Swordfish Simple Forum module for Wordpress allows remote attackers to execute arbitrary SQL commands via the u parameter.  NOTE: this issue was disclosed by an unreliable researcher, so the details might be incorrect.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2008-7175",
+        "Published": "2009-09-08T10:30:01.563",
+        "Last Modified": "2018-10-11T20:58:25.723",
+        "Description": "Cross-site scripting (XSS) vulnerability in wp-admin\/admin.php in NextGEN Gallery 0.96 and earlier plugin for Wordpress allows remote attackers to inject arbitrary web script or HTML via the picture description field in a page edit action.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2009-4168",
+        "Published": "2009-12-02T18:30:00.313",
+        "Last Modified": "2018-10-10T19:48:29.427",
+        "Description": "Cross-site scripting (XSS) vulnerability in Roy Tanck tagcloud.swf, as used in the WP-Cumulus plugin before 1.23 for WordPress and the Joomulus module 2.0 and earlier for Joomla!, allows remote attackers to inject arbitrary web script or HTML via the tagcloud parameter in a tags action. Cross-site scripting (XSS) vulnerability in tagcloud.swf in the WP-Cumulus Plug-in before 1.23 for WordPress allows remote attackers to inject arbitrary web script or HTML via the tagcloud parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2009-4169",
+        "Published": "2009-12-02T18:30:00.343",
+        "Last Modified": "2011-01-06T05:00:00.000",
+        "Description": "Cross-site scripting (XSS) vulnerability in wp-cumulus.php in the WP-Cumulus Plug-in before 1.22 for WordPress allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2009-4170",
+        "Published": "2009-12-02T18:30:00.377",
+        "Last Modified": "2018-10-10T19:48:31.380",
+        "Description": "WP-Cumulus Plug-in 1.20 for WordPress, and possibly other versions, allows remote attackers to obtain sensitive information via a crafted request to wp-cumulus.php, probably without parameters, which reveals the installation path in an error message.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2009-3703",
+        "Published": "2009-12-18T19:30:00.500",
+        "Last Modified": "2018-10-10T19:47:28.750",
+        "Description": "Multiple SQL injection vulnerabilities in the WP-Forum plugin before 2.4 for WordPress allow remote attackers to execute arbitrary SQL commands via (1) the search_max parameter in a search action to the default URI, related to wpf.class.php; (2) the forum parameter to an unspecified component, related to wpf.class.php; (3) the topic parameter in a viewforum action to the default URI, related to the remove_topic function in wpf.class.php; or the id parameter in a (4) editpost or (5) viewtopic action to the default URI, related to wpf-post.php.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-4424",
+        "Published": "2009-12-28T19:00:00.563",
+        "Last Modified": "2017-08-17T01:31:34.960",
+        "Description": "SQL injection vulnerability in results.php in the Pyrmont plugin 2 for WordPress allows remote attackers to execute arbitrary SQL commands via the id parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2010-0673",
+        "Published": "2010-02-22T20:30:00.467",
+        "Last Modified": "2010-02-23T05:00:00.000",
+        "Description": "SQL injection vulnerability in cplphoto.php in the Copperleaf Photolog plugin 0.16, and possibly earlier, for WordPress allows remote attackers to execute arbitrary SQL commands via the postid parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-4672",
+        "Published": "2010-03-05T18:30:00.563",
+        "Last Modified": "2017-09-19T01:30:01.593",
+        "Description": "Directory traversal vulnerability in main.php in the WP-Lytebox plugin 1.3 for WordPress allows remote attackers to include and execute arbitrary local files via a .. (dot dot) in the pg parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2009-4748",
+        "Published": "2010-03-26T20:30:00.610",
+        "Last Modified": "2017-09-19T01:30:03.533",
+        "Description": "SQL injection vulnerability in mycategoryorder.php in the My Category Order plugin 2.8 and earlier for WordPress allows remote attackers to execute arbitrary SQL commands via the parentID parameter in an act_OrderCategories action to wp-admin\/post-new.php.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2010-1186",
+        "Published": "2010-04-07T15:30:00.437",
+        "Last Modified": "2017-08-17T01:32:17.320",
+        "Description": "Cross-site scripting (XSS) vulnerability in xml\/media-rss.php in the NextGEN Gallery plugin before 1.5.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the mode parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-2924",
+        "Published": "2010-07-30T20:30:04.113",
+        "Last Modified": "2017-08-17T01:32:52.213",
+        "Description": "SQL injection vulnerability in myLDlinker.php in the myLinksDump Plugin 1.2 for WordPress allows remote attackers to execute arbitrary SQL commands via the url parameter.  NOTE: some of these details are obtained from third party information.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2010-3977",
+        "Published": "2010-11-03T13:37:09.340",
+        "Last Modified": "2018-10-10T20:06:08.700",
+        "Description": "Multiple cross-site scripting (XSS) vulnerabilities in wp-content\/plugins\/cforms\/lib_ajax.php in cforms WordPress plugin 11.5 allow remote attackers to inject arbitrary web script or HTML via the (1) rs and (2) rsargs[] parameters.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4402",
+        "Published": "2010-12-06T13:37:32.127",
+        "Last Modified": "2018-10-10T20:08:23.617",
+        "Description": "Multiple cross-site scripting (XSS) vulnerabilities in wp-login.php in the Register Plus plugin 3.5.1 and earlier for WordPress allow remote attackers to inject arbitrary web script or HTML via the (1) firstname, (2) lastname, (3) website, (4) aim, (5) yahoo, (6) jabber, (7) about, (8) pass1, and (9) pass2 parameters in a register action.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4403",
+        "Published": "2010-12-06T13:37:32.173",
+        "Last Modified": "2018-10-10T20:08:24.133",
+        "Description": "The Register Plus plugin 3.5.1 and earlier for WordPress allows remote attackers to obtain sensitive information via a direct request to (1) dash_widget.php and (2) register-plus.php, which reveals the installation path in an error message.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4518",
+        "Published": "2010-12-09T21:00:02.807",
+        "Last Modified": "2010-12-18T07:07:04.787",
+        "Description": "Cross-site scripting (XSS) vulnerability in wp-safe-search\/wp-safe-search-jx.php in the Safe Search plugin 0.7 for WordPress allows remote attackers to inject arbitrary web script or HTML via the v1 parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4277",
+        "Published": "2010-12-22T21:00:18.363",
+        "Last Modified": "2018-10-10T20:07:56.523",
+        "Description": "Cross-site scripting (XSS) vulnerability in lembedded-video.php in the Embedded Video plugin 4.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the content parameter to wp-admin\/post.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4630",
+        "Published": "2010-12-30T21:00:03.987",
+        "Last Modified": "2017-08-17T01:33:16.417",
+        "Description": "Cross-site scripting (XSS) vulnerability in pages\/admin\/surveys\/create.php in the WP Survey And Quiz Tool plugin 1.2.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the action parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4637",
+        "Published": "2010-12-30T21:00:05.720",
+        "Last Modified": "2017-08-17T01:33:16.713",
+        "Description": "Cross-site scripting (XSS) vulnerability in feedlist\/handler_image.php in the FeedList plugin 2.61.01 for WordPress allows remote attackers to inject arbitrary web script or HTML via the i parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-0641",
+        "Published": "2011-01-25T19:00:05.887",
+        "Last Modified": "2017-08-17T01:33:39.680",
+        "Description": "Multiple cross-site scripting (XSS) vulnerabilities in wp-admin\/admin.php in the StatPressCN plugin 1.9.0 for WordPress allow remote attackers to inject arbitrary web script or HTML via the (1) what1, (2) what2, (3) what3, (4) what4, and (5) what5 parameters. NOTE: the provenance of this information is unknown; the details are obtained solely from third party information.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-0740",
+        "Published": "2011-02-02T01:00:07.360",
+        "Last Modified": "2017-08-17T01:33:42.963",
+        "Description": "Cross-site scripting (XSS) vulnerability in magpie\/scripts\/magpie_slashbox.php in RSS Feed Reader 0.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the rss_url parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-1047",
+        "Published": "2011-02-21T19:00:01.270",
+        "Last Modified": "2018-10-09T19:30:15.410",
+        "Description": "Multiple SQL injection vulnerabilities in VastHTML Forum Server (aka ForumPress) plugin 1.6.1 and 1.6.5 for WordPress allow remote attackers to execute arbitrary SQL commands via the (1) search_max parameter in a search action to index.php, which is not properly handled by wpf.class.php, (2) id parameter in an editpost action to index.php, which is not properly handled by wpf-post.php, or (3) topic parameter to feed.php.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2010-4747",
+        "Published": "2011-03-01T22:00:01.067",
+        "Last Modified": "2017-08-17T01:33:21.243",
+        "Description": "Cross-site scripting (XSS) vulnerability in wordpress-processing-embed\/data\/popup.php in the Processing Embed plugin 0.5 for WordPress allows remote attackers to inject arbitrary web script or HTML via the pluginurl parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-0759",
+        "Published": "2011-03-22T17:55:01.267",
+        "Last Modified": "2017-08-17T01:33:43.667",
+        "Description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the configuration page in the Recaptcha (aka WP-reCAPTCHA) plugin 2.9.8.2 for WordPress allow remote attackers to hijack the authentication of administrators for requests that disable the CAPTCHA requirement or insert cross-site scripting (XSS) sequences via the (1) recaptcha_opt_pubkey, (2) recaptcha_opt_privkey, (3) re_tabindex, (4) error_blank, (5) error_incorrect, (6) mailhide_pub, (7) mailhide_priv, (8) mh_replace_link, or (9) mh_replace_title parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-0760",
+        "Published": "2011-03-28T16:55:04.403",
+        "Last Modified": "2017-08-17T01:33:43.713",
+        "Description": "Multiple cross-site request forgery (CSRF) vulnerabilities in the configuration screen in wp-relatedposts.php in the WP Related Posts plugin 1.0 for WordPress allow remote attackers to hijack the authentication of administrators for requests that insert cross-site scripting (XSS) sequences via the (1) wp_relatedposts_title, (2) wp_relatedposts_num, or (3) wp_relatedposts_type parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4779",
+        "Published": "2011-04-07T14:23:52.950",
+        "Last Modified": "2011-05-31T04:00:00.000",
+        "Description": "Cross-site scripting (XSS) vulnerability in lib\/includes\/auth.inc.php in the WPtouch plugin 1.9.19.4 and 1.9.20 for WordPress allows remote attackers to inject arbitrary web script or HTML via the wptouch_settings parameter to include\/adsense-new.php.  NOTE: some of these details are obtained from third party information.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-1669",
+        "Published": "2011-04-10T02:51:20.167",
+        "Last Modified": "2017-08-17T01:34:18.527",
+        "Description": "Directory traversal vulnerability in wp-download.php in the WP Custom Pages module 0.5.0.1 for WordPress allows remote attackers to read arbitrary files via ..%2F (encoded dot dot) sequences in the url parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4825",
+        "Published": "2011-08-24T10:55:05.320",
+        "Last Modified": "2017-08-29T01:29:04.800",
+        "Description": "Cross-site scripting (XSS) vulnerability in magpie_debug.php in the Twitter Feed plugin (wp-twitter-feed) 0.3.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the url parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2010-4839",
+        "Published": "2011-09-14T02:56:38.313",
+        "Last Modified": "2011-09-14T04:00:00.000",
+        "Description": "SQL injection vulnerability in the Event Registration plugin 5.32 and earlier for WordPress allows remote attackers to execute arbitrary SQL commands via the event_id parameter in a register action.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2011-3850",
+        "Published": "2011-09-28T10:55:03.343",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Atahualpa theme before 3.6.8 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3851",
+        "Published": "2011-09-28T10:55:03.483",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the News theme before 0.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the cpage parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3852",
+        "Published": "2011-09-28T10:55:03.560",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the EvoLve theme before 1.2.6 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3853",
+        "Published": "2011-09-28T10:55:03.903",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Hybrid theme before 0.10 for WordPress allows remote attackers to inject arbitrary web script or HTML via the cpage parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3854",
+        "Published": "2011-09-28T10:55:03.950",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the ZenLite theme before 4.4 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3855",
+        "Published": "2011-09-28T10:55:03.997",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the F8 Lite theme before 4.2.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3856",
+        "Published": "2011-09-28T10:55:04.060",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Elegant Grunge theme before 1.0.4 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3857",
+        "Published": "2011-09-28T10:55:04.107",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Antisnews theme before 1.10 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3858",
+        "Published": "2011-09-28T10:55:04.170",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Pixiv Custom theme before 2.1.6 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3859",
+        "Published": "2011-09-28T10:55:04.247",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Trending theme before 0.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the cpage parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3860",
+        "Published": "2011-09-28T10:55:04.310",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Cover WP theme before 1.6.6 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3861",
+        "Published": "2011-09-28T10:55:04.373",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Web Minimalist 200901 theme before 1.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the PATH_INFO to index.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3862",
+        "Published": "2011-09-28T10:55:04.450",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Morning Coffee theme before 3.6 for WordPress allows remote attackers to inject arbitrary web script or HTML via the PATH_INFO to index.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3863",
+        "Published": "2011-09-28T10:55:04.513",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the RedLine theme before 1.66 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3864",
+        "Published": "2011-09-28T10:55:04.547",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the The Erudite theme before 2.7.9 for WordPress allows remote attackers to inject arbitrary web script or HTML via the cpage parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3865",
+        "Published": "2011-09-28T10:55:04.623",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Black-LetterHead theme before 1.6 for WordPress allows remote attackers to inject arbitrary web script or HTML via the PATH_INFO to index.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-3981",
+        "Published": "2011-10-04T10:55:12.037",
+        "Last Modified": "2017-08-29T01:30:25.833",
+        "Description": "PHP remote file inclusion vulnerability in actions.php in the Allwebmenus plugin 1.1.3 for WordPress allows remote attackers to execute arbitrary PHP code via a URL in the abspath parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2010-4875",
+        "Published": "2011-10-07T10:55:07.660",
+        "Last Modified": "2017-08-29T01:29:06.330",
+        "Description": "Cross-site scripting (XSS) vulnerability in vodpod-video-gallery\/vodpod_gallery_thumbs.php in the Vodpod Video Gallery Plugin 3.1.5 for WordPress allows remote attackers to inject arbitrary web script or HTML via the gid parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-4562",
+        "Published": "2011-11-28T21:55:08.733",
+        "Last Modified": "2024-02-14T01:17:43.863",
+        "Description": "Multiple cross-site scripting (XSS) vulnerabilities in (1) view\/admin\/log_item.php and (2) view\/admin\/log_item_details.php in the Redirection plugin 2.2.9 for WordPress allow remote attackers to inject arbitrary web script or HTML via the Referer HTTP header in a request to a post that does not exist.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-4568",
+        "Published": "2011-11-29T11:55:05.617",
+        "Last Modified": "2011-11-30T05:00:00.000",
+        "Description": "Cross-site scripting (XSS) vulnerability in view\/frontend-head.php in the Flowplayer plugin before 1.2.12 for WordPress allows remote attackers to inject arbitrary web script or HTML via the URI.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-4646",
+        "Published": "2011-11-30T19:55:00.827",
+        "Last Modified": "2011-12-01T05:00:00.000",
+        "Description": "SQL injection vulnerability in wp-postratings.php in the WP-PostRatings plugin 1.50, 1.61, and probably other versions before 1.62 for WordPress allows remote authenticated users with the Author role to execute arbitrary SQL commands via the id attribute of the ratings shortcode when creating a post.  NOTE: some of these details are obtained from third party information.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2011-4669",
+        "Published": "2011-12-02T16:55:00.827",
+        "Last Modified": "2017-08-29T01:30:32.007",
+        "Description": "SQL injection vulnerability in wp-users.php in WordPress Users plugin 1.3 and possibly earlier for WordPress allows remote attackers to execute arbitrary SQL commands via the uid parameter to index.php.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2011-4671",
+        "Published": "2011-12-02T18:55:00.810",
+        "Last Modified": "2011-12-13T04:09:34.770",
+        "Description": "SQL injection vulnerability in adrotate\/adrotate-out.php in the AdRotate plugin 3.6.6, and other versions before 3.6.8, for WordPress allows remote attackers to execute arbitrary SQL commands via the track parameter (aka redirect URL).",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2011-4673",
+        "Published": "2011-12-02T18:55:02.920",
+        "Last Modified": "2017-08-29T01:30:32.210",
+        "Description": "SQL injection vulnerability in modules\/sharedaddy.php in the Jetpack plugin for WordPress allows remote attackers to execute arbitrary SQL commands via the id parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2011-4803",
+        "Published": "2011-12-14T00:55:04.607",
+        "Last Modified": "2012-03-05T05:00:00.000",
+        "Description": "SQL injection vulnerability in wptouch\/ajax.php in the WPTouch plugin for WordPress allows remote attackers to execute arbitrary SQL commands via the id parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2011-5051",
+        "Published": "2012-01-04T19:55:02.427",
+        "Last Modified": "2017-08-29T01:30:39.913",
+        "Description": "Multiple unrestricted file upload vulnerabilities in the WP Symposium plugin before 11.12.24 for WordPress allow remote attackers to execute arbitrary code by uploading a file with an executable extension using (1) uploadify\/upload_admin_avatar.php or (2) uploadify\/upload_profile_avatar.php, then accessing it via a direct request to the file in an unspecified directory inside the webroot.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2012-0895",
+        "Published": "2012-01-20T17:55:01.800",
+        "Last Modified": "2020-07-13T10:51:06.210",
+        "Description": "Cross-site scripting (XSS) vulnerability in map\/map.php in the Count Per Day module before 3.1.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the map parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-0896",
+        "Published": "2012-01-20T17:55:01.910",
+        "Last Modified": "2020-07-13T10:51:06.210",
+        "Description": "Absolute path traversal vulnerability in download.php in the Count Per Day module before 3.1.1 for WordPress allows remote attackers to read arbitrary files via the f parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-0898",
+        "Published": "2012-01-20T17:55:02.127",
+        "Last Modified": "2017-08-29T01:31:05.413",
+        "Description": "Directory traversal vulnerability in meb_download.php in the myEASYbackup plugin 1.0.8.1 for WordPress allows remote attackers to read arbitrary files via a .. (dot dot) in the dwn_file parameter.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-0934",
+        "Published": "2012-01-29T04:04:44.987",
+        "Last Modified": "2017-08-29T01:31:06.913",
+        "Description": "PHP remote file inclusion vulnerability in ajax\/savetag.php in the Theme Tuner plugin for WordPress before 0.8 allows remote attackers to execute arbitrary PHP code via a URL in the tt-abspath parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2012-1010",
+        "Published": "2012-02-07T21:55:04.250",
+        "Last Modified": "2017-08-29T01:31:09.210",
+        "Description": "Unrestricted file upload vulnerability in actions.php in the AllWebMenus plugin before 1.1.8 for WordPress allows remote attackers to execute arbitrary PHP code by uploading a ZIP file containing a PHP file, then accessing it via a direct request to the file in an unspecified directory.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2012-1011",
+        "Published": "2012-02-07T21:55:04.297",
+        "Last Modified": "2017-08-29T01:31:09.273",
+        "Description": "actions.php in the AllWebMenus plugin 1.1.8 for WordPress allows remote attackers to bypass intended access restrictions to upload and execute arbitrary PHP code by setting the HTTP_REFERER to a certain value, then uploading a ZIP file containing a PHP file, then accessing it via a direct request to the file in an unspecified directory.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2012-1067",
+        "Published": "2012-02-14T17:55:02.430",
+        "Last Modified": "2017-08-29T01:31:11.367",
+        "Description": "SQL injection vulnerability in the WP-RecentComments plugin 2.0.7 for WordPress allows remote attackers to execute arbitrary SQL commands via the id parameter in an rc-content action to index.php.  NOTE: the provenance of this information is unknown; the details are obtained solely from third party information.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2012-1068",
+        "Published": "2012-02-14T17:55:02.570",
+        "Last Modified": "2017-08-29T01:31:11.430",
+        "Description": "Cross-site scripting (XSS) vulnerability in the rc_ajax function in core.php in the WP-RecentComments plugin before 2.0.7 for WordPress allows remote attackers to inject arbitrary web script or HTML via the page parameter, related to AJAX paging.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-1205",
+        "Published": "2012-02-24T13:55:05.127",
+        "Last Modified": "2012-02-24T13:55:05.127",
+        "Description": "PHP remote file inclusion vulnerability in relocate-upload.php in Relocate Upload plugin before 0.20 for WordPress allows remote attackers to execute arbitrary PHP code via a URL in the abspath parameter.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2011-5082",
+        "Published": "2012-03-19T18:55:02.453",
+        "Last Modified": "2017-08-29T01:30:40.693",
+        "Description": "Cross-site scripting (XSS) vulnerability in the s2Member Pro plugin before 111220 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s2member_pro_authnet_checkout[coupon] parameter (aka Coupon Code field).",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-1785",
+        "Published": "2012-03-19T18:55:03.313",
+        "Last Modified": "2017-08-29T01:31:24.930",
+        "Description": "kg_callffmpeg.php in the Video Embed & Thumbnail Generator plugin before 2.0 for WordPress allows remote attackers to execute arbitrary commands via unspecified vectors.",
+        "Base Severity": "HIGH"
+    },
+    {
+        "CVE-ID": "CVE-2012-1786",
+        "Published": "2012-03-19T18:55:03.373",
+        "Last Modified": "2012-11-06T05:10:14.580",
+        "Description": "The Media Upload form in the Video Embed & Thumbnail Generator plugin before 2.0 for WordPress allows remote attackers to obtain the installation path via unknown vectors.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-2912",
+        "Published": "2012-05-21T18:55:07.430",
+        "Last Modified": "2017-08-29T01:31:45.210",
+        "Description": "Multiple cross-site scripting (XSS) vulnerabilities in the LeagueManager plugin 3.7 for WordPress allow remote attackers to inject arbitrary web script or HTML via the (1) group parameter in the show-league page or (2) season parameter in the team page to wp-admin\/admin.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-2913",
+        "Published": "2012-05-21T18:55:07.460",
+        "Last Modified": "2017-08-29T01:31:45.273",
+        "Description": "Multiple cross-site scripting (XSS) vulnerabilities in the Leaflet plugin 0.0.1 for WordPress allow remote attackers to inject arbitrary web script or HTML via the id parameter to (1) leaflet_layer.php or (2) leaflet_marker.php, as reachable through wp-admin\/admin.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-2916",
+        "Published": "2012-05-21T18:55:07.600",
+        "Last Modified": "2017-08-29T01:31:45.447",
+        "Description": "Cross-site scripting (XSS) vulnerability in sabre_class_admin.php in the SABRE plugin before 2.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the active_option parameter to wp-admin\/tools.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-2917",
+        "Published": "2012-05-21T18:55:07.647",
+        "Last Modified": "2017-08-29T01:31:45.493",
+        "Description": "Cross-site scripting (XSS) vulnerability in the Share and Follow plugin 1.80.3 for WordPress allows remote attackers to inject arbitrary web script or HTML via the CDN API Key (cnd-key) in a share-and-follow-menu page to wp-admin\/admin.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-2920",
+        "Published": "2012-05-21T22:55:01.197",
+        "Last Modified": "2017-08-29T01:31:45.680",
+        "Description": "Cross-site scripting (XSS) vulnerability in the userphoto_options_page function in user-photo.php in the User Photo plugin before 0.9.5.2 for WordPress allows remote attackers to inject arbitrary web script or HTML via the PATH_INFO to wp-admin\/options-general.php.  NOTE: some of these details are obtained from third party information.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2012-2759",
+        "Published": "2012-05-22T16:55:01.570",
+        "Last Modified": "2017-08-29T01:31:42.010",
+        "Description": "Cross-site scripting (XSS) vulnerability in login-with-ajax.php in the Login With Ajax (aka login-with-ajax) plugin before 3.0.4.1 for WordPress allows remote attackers to inject arbitrary web script or HTML via the callback parameter in a lostpassword action to wp-login.php.",
+        "Base Severity": "MEDIUM"
+    },
+    {
+        "CVE-ID": "CVE-2013-5918",
+        "Published": "2013-09-23T10:18:59.297",
+        "Last Modified": "2013-09-23T22:29:07.197",
+        "Description": "Cross-site scripting (XSS) vulnerability in platinum_seo_pack.php in the Platinum SEO plugin before 1.3.8 for WordPress allows remote attackers to inject arbitrary web script or HTML via the s parameter.",
+        "Base Severity": "MEDIUM"
+    }
+]
