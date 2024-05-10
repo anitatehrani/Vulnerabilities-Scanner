@@ -24,6 +24,7 @@ To use the vulnerability scanner, you need to create an instance of the `Service
 ```php
 $service = new Service($url, $type, $version);
 $service->checkVulnerabilities();
+```
 
 This will fetch the vulnerability data from the NVD's CVE API and save it to a file.
 
