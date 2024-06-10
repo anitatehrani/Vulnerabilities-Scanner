@@ -90,3 +90,7 @@ Here's an example of what the `inputs.json` file might look like:
     "url": "http://localhost/phpmyadmin"
   }
 ]
+```
+
+## Contribution
+The project was defined by [@auino](https://github.com/auino), our Professor in Functional and Security Testing Techniques.
