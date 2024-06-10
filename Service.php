@@ -88,6 +88,16 @@ private function identifyMysqlVersion() {
 
         $response = file_get_contents($url);
 
+        if ($response === false) {
+            throw new Exception('Failed to fetch data from NVD CVE API');
+        }
+
+        $data = json_decode($response, true);
+
+        if (!isset($data['vulnerabilities'])) {
+            throw new Exception('Unexpected response from NVD CVE API');
+        }
+
         $formatted = $this->extractVulnerabilities($response);
 
         $jsonOutput = json_encode($formatted, JSON_PRETTY_PRINT);
