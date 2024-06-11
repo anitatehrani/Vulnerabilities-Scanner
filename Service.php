@@ -2,22 +2,6 @@
 
 require_once 'vendor/autoload.php';
 
-class MockVulnerabilityScanner implements VulnerabilityScanner {
-    public function scan($serviceType, $serviceVersion) {
-        $vulnerabilities = [];
-        if ($serviceType === 'Apache' && $serviceVersion === '2.4.48') {
-            $vulnerabilities[] = ['id' => 'CVE-2023-XXXX', 'description' => 'Sample Apache vulnerability', 'severity' => 'High'];
-        } elseif ($serviceType === 'Wordpress' && $serviceVersion === '6.1.1') {
-            $vulnerabilities[] = ['id' => 'CVE-2024-YYYY', 'description' => 'Sample Wordpress vulnerability', 'severity' => 'Medium'];
-        }
-        return $vulnerabilities;
-    }
-}
-
-interface VulnerabilityScanner {
-    public function scan($serviceType, $serviceVersion);
-}
-
 class Service {
     public $type;
     public $url;
